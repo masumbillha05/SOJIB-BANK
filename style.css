@@ -1,0 +1,62 @@
+body{
+    background-image:url("Full-BackGround-Image.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 100px;
+}
+.text-center{
+    font-family: 'Roboto Slab', serif;
+    font-size: 40px;
+    padding-bottom: 40px;
+}
+.color-style{
+    color: #5b5b5b;
+}
+.ltd{
+    font-size: 20px;
+}
+#submit-area{
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px #5b5b5b;
+}
+.submit-style{
+    font-family: 'Roboto Slab', serif;
+    color: #5b5b5b;
+}
+.login-style{
+    font-family: 'Roboto Slab', serif;
+}
+#transaction-area{
+    display: none;
+}
+.account-style{
+    font-family: 'Roboto Slab', serif;
+}
+.Savings{
+    background-color:GREEN;
+}
+.Withdraw{
+    background-color: PURPLE;
+}
+.Wallet{
+    background-color: NAVY;
+}
+.Location{
+    margin: 0 30px;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    padding-left: 30px;
+    box-shadow: 4px 4px 8px #5b5b5b;
+}
+.Location2{
+    margin: 0 27px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px #5b5b5b;
+}
+.padding-top{
+    padding-top: 75px;
+}

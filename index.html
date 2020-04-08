@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <title> SOJIB BANK </title>
+</head>
+<body>
+    <div  id="loing-area">
+    <h1 class="text-center text-primary"> Welcome to <span class="color-style"> SOJIB BANK 
+    <small class="ltd"> Ltd.
+    </small> </span> </h1>
+    <div id="submit-area">
+    <h4 class="submit-style">Submit</h4>
+    <input type="text" class="form-control" placeholder=" Account Number">
+    <br>
+    <input type="password" class="form-control" placeholder=" Account Password ">
+    <br>
+    <button id="login" class="btn btn-success submit-style">Login</button>
+    </div>
+    </div>
+    
+    <div id="transaction-area">
+    <div class="row">
+        <div class="col-4 account-style">
+        <div class=" Savings Location">
+            <h5>Savings</h5>
+            <h2>BDT <span id="CurrentSavings">00</span></h2>
+        </div>
+        </div>
+        <div class="col-4 account-style">
+        <div class=" Withdraw Location">
+            <h5>Withdraw</h5>
+            <h2>BDT 00</h2>
+        </div>
+        </div>
+        <div class="col-4 account-style">
+        <div class=" Wallet Location">
+            <h5>Wallet</h5>
+            <h2>BDT 55000</h2>
+        </div>
+        </div>
+    </div>
+    <div class="row padding-top">
+    <div class="col-6 submit-style">
+                <div class="Location2">
+                <h4>Savings</h4>
+                <input id="SavingsAccount" type="text" class="form-control" placeholder=" BDT want to saving money an account">
+                <br>
+                <button id="SavingsButn" class="btn btn-success">Savings</button>
+                </div>
+            </div>
+            <div class="col-6 submit-style">
+                <div class="Location2">
+                <h4>Withdraw</h4>
+                <input type="text" class="form-control" placeholder=" BDT want to withdraw money an account">
+                <br>
+                <button class="btn btn-success">Withdraw</button>  
+                </div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+    <script>
+            // This is a login js
+        const loginButton = document.getElementById("login");
+        loginButton.addEventListener("click", function(){
+        const loingArea = document.getElementById("loing-area");
+        loingArea.style.display = "none";   
+        const TransactionArea = document.getElementById("transaction-area");
+        TransactionArea.style.display = "block";
+    })
+            // this is a 2bd login
+        const SavingsButton = document.getElementById("SavingsButn");
+        SavingsButton.addEventListener("click", function(){
+        const SavingsAccount = document.getElementById("SavingsAccount").value;
+        const SavingsNamber = parseFloat("SavingsAccount");
+
+        const CurrentSavings = document.getElementById("CurrentSavings").innerText;
+        const CurrentSavingsNamber = parseFloat("CurrentSavings");
+        const totalSavings = SavingsNamber + CurrentSavingsNamber;
+
+        document.getElementById("CurrentSavings").innerText = totalSavings;
+        document.getElementById("SavingsAccount").value = "";
+    })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
