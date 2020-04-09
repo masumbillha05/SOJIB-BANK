@@ -40,7 +40,7 @@
     <div class="col-4 account-style">
     <div class=" Wallet Location">
                 <h5>Wallet</h5>
-                <h2>BDT <span id="">00</span> 55000</h2>
+                <h2>BDT <span id="currentWallet">55000</span></h2>
     </div>
     </div>
     </div>
@@ -86,6 +86,14 @@
         const totalSavings = savingsNumber + currentsavingsNumber;
         
         document.getElementById("currentSavings").innerText = totalSavings;
+
+                // Wallet button event 
+        const CurrentWlet = document.getElementById("currentWallet").innerText;
+        const CurrentWletNumber = parseFloat(currentWallet);
+        const totalWallet = savingsNumber + CurrentWletNumber;
+        document.getElementById ("currentWallet").innerText = totalWallet;
+
+        document.getElementById("savingsAccount").value = "";
         
     })
     </script>
