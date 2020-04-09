@@ -34,7 +34,7 @@
     <div class="col-4 account-style">
     <div class=" Withdraw Location">
                 <h5>Withdraw</h5>
-                <h2>BDT 00</h2>
+                <h2>BDT <span id="currentWithdraw">00</span></h2>
     </div>
     </div>
     <div class="col-4 account-style">
@@ -50,15 +50,15 @@
                 <h4>Savings</h4>
                 <input id="savingsAccount" type="text" class="form-control" placeholder=" BDT want to saving money an account">
                 <br>
-                <button id="SavingsButn" class="btn btn-success">Savings</button>
+                <button id="savingsButn" class="btn btn-success">Savings</button>
                 </div>
         </div>
         <div class="col-6 submit-style">
                 <div class="Location2">
                 <h4>Withdraw</h4>
-                <input type="text" class="form-control" placeholder=" BDT want to withdraw money an account">
+                <input id="withdrawAccount" type="text" class="form-control" placeholder=" BDT want to withdraw money an account">
                 <br>
-                <button class="btn btn-success">Withdraw</button>  
+                <button id="withdrawButn" class="btn btn-success">Withdraw</button>  
                 </div>
     </div>
     </div>
@@ -75,11 +75,10 @@
         const TransactionArea = document.getElementById("transaction-area");
         TransactionArea.style.display = "block";
     })
-                 //deposit button event handler
-        const SavingsButton = document.getElementById("SavingsButn");
+                 //Savings button event handler
+        const SavingsButton = document.getElementById("savingsButn");
         SavingsButton.addEventListener("click", function(){
-        const savingsAccount = document.getElementById("savingsAccount").value;
-        const savingsNumber = parseFloat(savingsAccount);
+        const savingsNumber = getInputNumber ("savingsAccount")
 
         updateSpanText("currentSavings", savingsNumber);
         updateSpanText("currentWallet", savingsNumber);
@@ -88,6 +87,21 @@
         
     })
 
+                 //Withdraw button event handler
+        const withdrawButton = document.getElementById("withdrawButn");
+        withdrawButton.addEventListener("click", function () {
+        const withdrawNumber = getInputNumber("withdrawAccount")
+         
+        updateSpanText("currentWithdraw", withdrawNumber);
+        updateSpanText("currentWallet", -1 * withdrawNumber);
+
+        document.getElementById("withdrawAccount").value = "";
+    })
+    function getInputNumber(id){
+        const account = document.getElementById(id).value;
+        const accountNumber = parseFloat(account);
+        return accountNumber;
+    }
     function updateSpanText (id,savingsNumber) {
         const current = document.getElementById(id).innerText;
         const currentNumber = parseFloat(current);
